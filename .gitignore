@@ -33,6 +33,7 @@ __pycache__/
 *.npy
 *.png
 *.jpg
+*.joblib
 
 # Fichiers de journalisation
 *.log
