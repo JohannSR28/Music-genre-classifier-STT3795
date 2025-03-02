@@ -1,0 +1,45 @@
+# Fichiers et répertoires générés par le système
+.DS_Store
+Thumbs.db
+
+# Environnements virtuels Python
+.env/
+venv/
+env_musique/
+ENV/
+
+# Fichiers de données volumineux
+data/raw/
+data/processed/
+
+# Fichiers de métadonnées FMA (à ignorer si téléchargés séparément)
+data/raw/fma_metadata/
+
+# Fichiers audio FMA Small (8 000 fichiers MP3)
+data/raw/fma_small/
+
+# Fichiers de configuration IDE
+.idea/
+.vscode/
+
+# Fichiers de cache Python
+__pycache__/
+*.py[cod]
+
+# Fichiers de sortie et résultats
+*.csv
+*.pkl
+*.npy
+*.png
+*.jpg
+
+# Fichiers de journalisation
+*.log
+
+# Fichiers de rapport LaTeX temporaires
+rapport/*.aux
+rapport/*.log
+rapport/*.out
+
+# Fichiers de log
+tree.py
