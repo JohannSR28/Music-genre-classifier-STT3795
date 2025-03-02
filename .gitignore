@@ -11,6 +11,7 @@ ENV/
 # Fichiers de données volumineux
 data/raw/
 data/processed/
+models/
 
 # Fichiers de métadonnées FMA (à ignorer si téléchargés séparément)
 data/raw/fma_metadata/
