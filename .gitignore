@@ -9,15 +9,14 @@ env_musique/
 ENV/
 
 # Fichiers de données volumineux
-data/raw/
-data/processed/
-models/
+data/processed/*
+models/*
 
 # Fichiers de métadonnées FMA (à ignorer si téléchargés séparément)
 data/raw/fma_metadata/
 
 # Fichiers audio FMA Small (8 000 fichiers MP3)
-data/raw/fma_small/
+data/raw/*
 
 # Fichiers de configuration IDE
 .idea/
