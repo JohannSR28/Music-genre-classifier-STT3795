@@ -45,3 +45,6 @@ rapport/*.out
 
 # Fichiers de log
 tree.py
+
+# Fichiers de configuration de l'environnement
+.gitkeep
