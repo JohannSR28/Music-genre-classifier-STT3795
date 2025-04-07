@@ -10,13 +10,18 @@ ENV/
 
 # Fichiers de données volumineux
 data/processed/*
+!data/processed/.gitkeep
 models/*
+!models/.gitkeep
+!notebooks/.gitkeep
+!rapport/.gitkeep
 
 # Fichiers de métadonnées FMA (à ignorer si téléchargés séparément)
 data/raw/fma_metadata/
 
 # Fichiers audio FMA Small (8 000 fichiers MP3)
 data/raw/*
+!data/raw/.gitkeep 
 
 # Fichiers de configuration IDE
 .idea/
