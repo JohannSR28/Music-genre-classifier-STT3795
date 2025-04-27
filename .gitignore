@@ -18,6 +18,7 @@ models/*
 
 # Fichiers de métadonnées FMA (à ignorer si téléchargés séparément)
 data/raw/fma_metadata/
+data/cnn_input/
 
 # Fichiers audio FMA Small (8 000 fichiers MP3)
 data/raw/*
