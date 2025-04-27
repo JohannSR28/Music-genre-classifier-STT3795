@@ -8,9 +8,6 @@
 
 import os
 import tensorflow as tf
-#from tensorflow.keras.preprocessing import image
-#from tensorflow.keras.models import Sequential
-#from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten,  Dense, Dropout
 
 CONFIG = {
     "cnn_input_dir": "data/cnn_input",
@@ -49,6 +46,8 @@ model = tf.keras.models.Sequential([
     # Nous débutons avec 32 filtres (3,3) et activons seulement les valeurs positives (pour accélérer la convergence)
     tf.keras.layers.Conv2D(32, (3,3), activation = 'relu', input_shape=(CONFIG["img_size"],CONFIG["img_size"], 3)),
     
+    tf.keras.layers.BatchNormalization(),
+
     # COUCHE POOLING (1ère)
     # Réduction de la taille de l'image de moitié
     tf.keras.layers.MaxPooling2D(pool_size=(CONFIG["pool_size"], CONFIG["pool_size"])),
@@ -57,7 +56,19 @@ model = tf.keras.models.Sequential([
     # Augmentation à 64 filtres pour apprendre des motifs plus complexes
     tf.keras.layers.Conv2D(64, (3,3), activation = 'relu'),
     
+    tf.keras.layers.BatchNormalization(),
+
     # COUCHE POOLING (2ième)
+    # Réduction de la taille de l'image de moitié
+    tf.keras.layers.MaxPooling2D(pool_size=(CONFIG["pool_size"], CONFIG["pool_size"])),
+
+    # COUCHE CONVOLUTION ET ACTIVATION (3ième)
+    # Augmentation à 64 filtres pour apprendre des motifs plus complexes
+    tf.keras.layers.Conv2D(128, (3,3), activation = 'relu'),
+    
+    tf.keras.layers.BatchNormalization(),
+
+    # COUCHE POOLING (3ième)
     # Réduction de la taille de l'image de moitié
     tf.keras.layers.MaxPooling2D(pool_size=(CONFIG["pool_size"], CONFIG["pool_size"])),
 
@@ -66,8 +77,8 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Flatten(),
 
     # COUCHE FULLY CONNECTED
-    tf.keras.layers.Dense(128, activation = 'relu'),#128 neurones
-    tf.keras.layers.Dropout(0.4),
+    tf.keras.layers.Dense(256, activation = 'relu'),#128 neurones
+    tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(CONFIG["num_classes"], activation = "softmax")
 ])
 
