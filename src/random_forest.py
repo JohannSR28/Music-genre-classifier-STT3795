@@ -91,7 +91,7 @@ def extract_features(audio_path):
             tempogram.std(axis=1)[:50]
         ])
         
-        return features #178 caratéristiques
+        return features #180 caratéristiques
     
     except Exception as e:
         print(f"Error processing {audio_path}: {str(e)}")
